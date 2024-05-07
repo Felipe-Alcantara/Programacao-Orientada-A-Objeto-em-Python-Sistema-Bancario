@@ -11,20 +11,20 @@ if __name__ == "__main__": # Isso garante que o código seja executado apenas se
 
     # Realizar operações
     Conta_corrente1.depositar(500) # Isso chama o método depositar do objeto Conta_corrente1 para depositar 500 na conta.
-    print()
+    print("1")
 
     Conta_poupanca1.sacar(1000) # Isso chama o método sacar do objeto Conta_poupanca1 para sacar 1000 da conta.
-    print()
+    print("2")
 
     Conta_poupanca1.calcular_juros() # Isso chama o método calcular_juros do objeto Conta_poupanca1 para calcular e adicionar os juros ao saldo da conta.
-    print()
+    print("3")
 
     # Essas linhas chamam o método extrato dos respectivos objetos de conta para imprimir o extrato da conta.
     Conta_corrente1.extrato()
-    print()
+    print("4")
 
     Conta_poupanca1.extrato()
-    print()
+    print("5")
 
     Conta_corrente2.extrato()
-    print()
+    print("6")

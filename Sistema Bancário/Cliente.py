@@ -12,7 +12,7 @@ from Conta import Conta, ContaCorrente, ContaPoupanca
 # __Private - Não pode ser chamada fora da classe
 
 class Cliente:
-    def __init__(self, nome, cpf) -> None:
+    def __init__(self, nome, cpf) -> None: # Coisas comuns de todos os clientess
         self.nome = nome
         self.cpf = cpf
         self._contas = [] #Lista de contas privadas
@@ -29,4 +29,4 @@ class Cliente:
         return conta # Isso retorna a nova conta.
     
     def __str__(self) -> str: # Este é o método __str__ da classe Cliente. Ele retorna uma representação em string Cliente.
-        return f"Cliente {self.nome}, de CPF {self.cpf}" # Isso retorna uma string formatada que inclui o nome e o CPF.
+        return f"Cliente: {self.nome}, de CPF: {self.cpf}" # Isso retorna uma string formatada que inclui o nome e o CPF.
