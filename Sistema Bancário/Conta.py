@@ -42,6 +42,23 @@ class Conta:
             print(f"{data_hora}: {descricao}") # Isso percorre a lista de transações e imprime a data e hora e a descrição de cada transação.
         print(f"Saldo atual do Cliente: R${self._saldo}") # Isso imprime o saldo atual da conta.
 
+    def transferir(self, conta_destino, valor):
+        if not isinstance(conta_destino, Conta):
+            raise ValueError("A conta de destino deve ser uma instância da classe Conta.")
+        if valor <= 0:
+            raise ValueError("O valor da transferência inválido.")
+        if valor > self._saldo:
+            raise ValueError("Saldo insuficiente para transferência.")
+        self._saldo -= valor
+        self._registrar_transacao(f"Transferência para conta {conta_destino._numero_conta} no valor de R${valor}")
+        conta_destino._saldo += valor
+        conta_destino._registrar_transacao(f"Transferência recebida da conta {self._numero_conta} no valor de R${valor}")
+        print(f"Transferência recebida da conta {self._numero_conta} no valor de R${valor} para a conta de número: {conta_destino._numero_conta}")
+
+        # Imprime os saldos atualizados das contas
+        print(f"Saldo atual da conta {self._numero_conta}: R${self._saldo}")
+        print(f"Saldo atual da conta {conta_destino._numero_conta}: R${conta_destino._saldo}")
+
 class ContaCorrente(Conta): # Isso define uma nova classe chamada ContaCorrente que herda da classe Conta.
     def __init__(self, saldo_inicial=0) -> None: 
         super().__init__(saldo_inicial) # Este é o método construtor da classe ContaCorrente. Ele chama o método construtor da classe pai Conta com o parâmetro saldo_inicial.

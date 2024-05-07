@@ -28,3 +28,6 @@ if __name__ == "__main__": # Isso garante que o código seja executado apenas se
 
     Conta_corrente2.extrato()
     print("6")
+
+    Conta_corrente1.transferir(Conta_corrente2, 500)
+    print("7")
